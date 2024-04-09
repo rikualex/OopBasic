@@ -9,7 +9,7 @@ public class Employee {
 	
 	
 	//コンストラクター
-	public Employee(String name, String department, String position, int employeeId) {
+	public Employee(String name, Department department, String position, int employeeId) {
 		this.name = name;
 		this.department = department;
 		this.position = position;

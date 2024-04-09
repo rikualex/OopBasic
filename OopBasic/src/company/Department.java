@@ -12,7 +12,7 @@ public class Employee {
 	//コンストラクター
 	public Employee(String name, Department departmnet, String position, int employeeId) {
 		this.name = name;
-		this.Department = department;
+		this.department = department;
 		this.position = position;
 		this.employeeId = employeeId;
 
