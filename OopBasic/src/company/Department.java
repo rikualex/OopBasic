@@ -1,38 +1,41 @@
 package company;
 
-
-public class Employee {
-	// フィールド
-	protected final String name;
-	private final Department department;
-	private final String position;
-	private final int employeeId;
+public class Department {
+	private final String name;
+	private final String departmentId;
+	private int budget;
 	
-	
-	//コンストラクター
-	public Employee(String name, Department departmnet, String position, int employeeId) {
+	// 	コンストラクター
+	public Department(String name, String departmentId, int budget) {
 		this.name = name;
-		this.department = department;
-		this.position = position;
-		this.employeeId = employeeId;
+		this.departmentId = departmentId;
+		this.budget = budget;
+	}
 
+	// 	会議を開催する
+	public void meeting() {
+		System.out.println("部内会議を開催します。部署:"+ name + "、予算:"+ budget);
 	}
 	
-	//報告メソッド
-	public void report(int times) {
-		System.out.println(times + "回目の報告をします。役職："+ position +"、名前："+ name );
+	//nameのgetter
+	public String getName() {
+		return name;
+	
+	}	
+		
+	//nameのgetter 
+	public double getBudget() {
+		return budget;
 	}
 
 	
-	//報告メソッド（オーバーロード）
-	public void report() {
-		report(1);
+	//budgetのsetter
+	public void setBudget(int budget) {
+		if (budget < 0) {
+			throw new IllegalArgumentException("予算はマイナスにできません。");
+			
+		}
+		this.budget = budget;
 	}
-
-	//会議に参加するメソッド
-	public void joinmeeting() {
-		department.meeting();
-		System.out.println("→上記の会議に参加します。部署："+ department.getname()+"名前："+ name);
-	}
- 
+	
 }
